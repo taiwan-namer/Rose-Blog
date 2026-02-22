@@ -6,7 +6,11 @@ import Sidebar from "@/components/home/Sidebar";
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
-      <HeroCarousel />
+      <div className="mx-auto max-w-6xl px-4 pt-10 md:px-6">
+        <div className="overflow-hidden rounded-xl">
+          <HeroCarousel />
+        </div>
+      </div>
       <div className="mx-auto max-w-6xl px-4 py-10 md:px-6">
         <div className="flex flex-col gap-10 lg:flex-row lg:gap-12">
           <main className="min-w-0 flex-1">
