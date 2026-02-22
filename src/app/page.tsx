@@ -12,7 +12,7 @@ export default function HomePage() {
         </div>
       </div>
       <div className="mx-auto max-w-6xl px-4 py-10 md:px-6">
-        <div className="flex flex-col gap-10 lg:flex-row lg:gap-12">
+        <div className="flex flex-col items-stretch gap-10 lg:flex-row lg:items-start lg:gap-12">
           <main className="min-w-0 flex-1">
             <Suspense
               fallback={

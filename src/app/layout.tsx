@@ -11,17 +11,17 @@ const notoSansTC = Noto_Sans_TC({
 
 export const metadata: Metadata = {
   title: {
-    default: "童趣島 Joyseed Island - 羅老闆與 Rose 的宜蘭探險記",
-    template: "%s | 童趣島",
+    default: "Rose's Blog",
+    template: "%s | Rose's Blog",
   },
   description:
-    "童趣島，帶孩子看見不一樣的世界。羅老闆與 Rose 的親子探險，分享宜蘭景點、親子生活與溫馨日常。",
-  keywords: ["童趣島", "親子旅遊", "宜蘭景點", "親子生活", "Joyseed Island"],
-  authors: [{ name: "童趣島" }],
+    "Rose's Blog，帶孩子看見不一樣的世界。親子探險，分享宜蘭景點、親子生活與溫馨日常。",
+  keywords: ["Rose's Blog", "親子旅遊", "宜蘭景點", "親子生活", "Joyseed Island"],
+  authors: [{ name: "Rose's Blog" }],
   openGraph: {
     type: "website",
     locale: "zh_TW",
-    siteName: "童趣島 Joyseed Island",
+    siteName: "Rose's Blog",
   },
 };
 

@@ -69,7 +69,7 @@ export default function Navbar() {
           href="/"
           className="font-serif text-xl font-semibold tracking-wide text-white hover:text-white/90 sm:text-2xl"
         >
-          Rose Blog
+          Rose's Blog
         </Link>
 
         {/* 主選單 */}
