@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Calendar, Clock, Sparkles, Stars, Moon, MapPin } from 'lucide-react';
 
@@ -20,7 +20,15 @@ const SHICHEN = [
   { key: '亥', range: '21:00 - 22:59' },
 ] as const;
 
-export default function DestinyMapPage() {
+function DestinyMapFallback() {
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="text-purple-200/80">載入中...</div>
+    </div>
+  );
+}
+
+function DestinyMapContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
@@ -282,5 +290,13 @@ export default function DestinyMapPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function DestinyMapPage() {
+  return (
+    <Suspense fallback={<DestinyMapFallback />}>
+      <DestinyMapContent />
+    </Suspense>
   );
 }
