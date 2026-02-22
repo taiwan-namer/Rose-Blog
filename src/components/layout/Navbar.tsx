@@ -6,10 +6,6 @@ import { useState } from "react";
 // 導航選單結構（連結至首頁依標籤篩選）
 const navItems = [
   {
-    label: "DestinyMap",
-    href: "/destinymap",
-  },
-  {
     label: "國內旅遊",
     href: "/",
     children: [

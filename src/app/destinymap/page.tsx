@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Calendar, Clock, Sparkles, Stars, Moon, MapPin } from 'lucide-react';
 
 // 時辰：子丑寅卯辰巳午未申酉戌亥，每時辰 2 小時
@@ -22,6 +22,7 @@ const SHICHEN = [
 
 export default function DestinyMapPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: '',
     birthPlace: '',
@@ -30,6 +31,13 @@ export default function DestinyMapPage() {
     isTimeUnknown: false,
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    const nameFromUrl = searchParams.get('name');
+    if (nameFromUrl?.trim()) {
+      setFormData((prev) => ({ ...prev, name: decodeURIComponent(nameFromUrl.trim()) }));
+    }
+  }, [searchParams]);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
